@@ -58,16 +58,17 @@
     .then(response => {
       let boo = JSON.stringify(response);
       boo = JSON.stringify(response, null, 4); 
-      console.log(response);
+      console.log(boo);
       alert(boo);
-      if( response.ok ) {
-        return response.text()
+      if( response.ok ) {console.log(response.text());
+        return response.text();
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
+      console.log(data.trim());
       if (data.trim() == 'OK') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
