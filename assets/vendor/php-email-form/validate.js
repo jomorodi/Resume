@@ -56,10 +56,7 @@
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
     .then(response => {
-      let boo = JSON.stringify(response);
-      boo = JSON.stringify(response, null, 4); 
-      console.log(boo);
-      
+            
       if( response.ok ) {
         return response.text();
       } else {
