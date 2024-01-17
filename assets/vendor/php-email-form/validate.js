@@ -59,21 +59,22 @@
             
       if( response.ok ) {
         return response.text();
-      } else {
+      } else {console.log("Error(` response.status was executed");
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
       console.log(data.trim());
-      if (data.trim() == 'OK') {console.log("This part was executed"); console.log(typeof data.trim());
+      console.log(typeof data.trim());
+      if (data.trim() == 'OK') {console.log("data.trim() == ok This part was executed"); 
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
-      } else {
+      } else {console.log("Error(data ? data : was executed");
         throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
       }
     })
-    .catch((error) => {
+    .catch((error) => {console.log("thisForm, error");
       displayError(thisForm, error);
     });
   }
