@@ -59,8 +59,8 @@
       let boo = JSON.stringify(response);
       boo = JSON.stringify(response, null, 4); 
       console.log(boo);
-      alert(boo);
-      if( response.ok ) {console.log(response.text());
+      
+      if( response.ok ) {
         return response.text();
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
