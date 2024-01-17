@@ -67,7 +67,7 @@
       thisForm.querySelector('.loading').classList.remove('d-block');
       console.log(data.trim());
       console.log(typeof data.trim());
-      if (data.trim() == 'OK') {console.log("data.trim() == ok This part was executed"); 
+      if (data.trim().toLowerCase().includes('ok')) {console.log("data.trim() == ok This part was executed"); 
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {console.log("Error(data ? data : was executed");
